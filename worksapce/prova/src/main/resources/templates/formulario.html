@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="utf-8">
+<title>Um Titulo Qualquer</title>
+<link href="/css/formulario.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="signupSection">
+  <div class="info">
+    <h2>Insira suas Informações aqui</h2>
+    <i class="icon ion-ios-ionic-outline" aria-hidden="true"></i>
+    <p>Seu Future Começaa aqui</p>
+  </div>
+  <form action="salvar" method="POST" class="signupForm" name="signupform">
+    <h2>Sign Up</h2>
+    <ul class="noBullet">
+      <li>
+        <label for="nome"></label>
+        <input type="hidden" name="id" th:value="${aluno.id}">
+        <input type="text" class="inputFields" id="nome"  name="nome" placeholder="Nome" value="" th:value="${aluno.nome}" oninput="return userNameValidation(this.value)" required/>
+      </li>
+      <li>
+        <label for="cpf"></label>
+        <input type="text" class="inputFields" id="cpf" name="cpf" placeholder="Cpf" value="" th:value="${aluno.cpf}" oninput="return passwordValidation(this.value)" required/>
+      </li>
+      <li>
+        <label for="endereco"></label>
+        <input type="text" class="inputFields" id="endereco" name="endereco" placeholder="Endereço" value="" th:value="${aluno.endereco}" required/>
+      </li>
+      <li id="center-btn">
+        <input type="submit" id="join-btn" name="join" alt="Join" value="Cadastrar">
+      </li>
+    </ul>
+  </form>
+</div>
+</body>
+</html>

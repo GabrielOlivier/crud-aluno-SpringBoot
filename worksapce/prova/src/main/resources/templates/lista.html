@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+
+<meta charset="utf-8">
+<title>Insert title here</title>
+<link href="/css/tabela.css" rel="stylesheet"/>
+</head>
+<body>
+
+
+<div class="container">
+	<table>
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Nome</th>
+				<th>Cpf</th>
+				<th>Endereço</th>
+				<th>Edição</th>
+				<th>Exclusão</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="a : ${alunos}">
+            <td th:text="${a.id}"></td>
+            <td th:text="${a.nome}"></td>
+            <td th:text="${a.cpf}"></td>
+            <td th:text="${a.endereco}"></td>
+           	<td><a th:href="@{editar/(id=${a.id})}">Editar</a></td>
+			<td><a th:href="@{deletar/(id=${a.id})}">Deletar</a></td>
+        </tr>
+		</tbody>
+	</table>
+</div>
+</body>
+</html>
